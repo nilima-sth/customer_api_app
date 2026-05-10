@@ -1,0 +1,7 @@
+#dependencies
+fastapi==0.136.1
+unicorn==2.1.4
+pydantic==2.13.4 
+pydantic-settings==2.14.1
+SQLAlchemy==2.0.49
+psycopg2-binary==2.9.12 #helps in directly communicate with database.
