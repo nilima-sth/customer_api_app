@@ -9,11 +9,7 @@ from logger import get_logger
 
 logger = get_logger(__name__)
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# TASK 2 — CUSTOMER CRUD
-# ══════════════════════════════════════════════════════════════════════════════
-
+#task-2 from here
 def get_customers(db: Session, skip: int = 0, limit: int = 100) -> List[models.Customer]:
     logger.info("READ all customers — skip=%d, limit=%d", skip, limit)
     result = db.query(models.Customer).offset(skip).limit(limit).all()
@@ -103,12 +99,8 @@ def get_customer_payments(db: Session, customer_id: int) -> List[models.Payment]
     return result
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# TASK 3 — 8 ASYNC COUNT FUNCTIONS
-# asyncio.to_thread() runs the blocking SQLAlchemy call in a thread pool
-# so FastAPI's event loop is never blocked.
-# ══════════════════════════════════════════════════════════════════════════════
 
+#task-3 from here
 def _sync_count(db: Session, model) -> int:
     return db.query(model).count()
 

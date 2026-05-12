@@ -15,10 +15,6 @@ logger = get_logger(__name__)
 router = APIRouter()
 
 
-# ══════════════════════════════════════════════════════════════════════════════
-# TASK 2 — CUSTOMER ENDPOINTS
-# ══════════════════════════════════════════════════════════════════════════════
-
 @router.get("/customers", response_model=List[schemas.CustomerOut])
 def list_customers(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     logger.info("GET /customers  skip=%d limit=%d", skip, limit)
@@ -104,10 +100,6 @@ def get_customer_payments(customer_id: int, db: Session = Depends(get_db)):
     logger.info("GET /customers/%d/payments → %d payment(s)", customer_id, len(payments))
     return payments
 
-
-# ══════════════════════════════════════════════════════════════════════════════
-# TASK 3 — INDIVIDUAL COUNT ENDPOINTS
-# ══════════════════════════════════════════════════════════════════════════════
 
 @router.get("/customers/count", response_model=dict)
 async def count_customers(db: Session = Depends(get_db)):
