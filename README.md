@@ -6,13 +6,15 @@ A production-grade **FastAPI** REST API demonstrating clean architecture, databa
 
 This application manages customer data with comprehensive CRUD operations, relationship queries, and concurrent dashboard aggregation. It showcases professional backend development practices including:
 
--  **4-Layer Clean Architecture** (database → logic → validation → API)
--  **Comprehensive Logging** (console + file)
--  **Async/Await Concurrency** (asyncio.gather for parallel queries)
--  **Error Handling** (404, 400, validation errors)
--  **Field Validation** (Pydantic schemas)
--  **Relationship Queries** (customers + orders + payments)
--  **Pagination** (skip/limit parameters)
+- 4-layer Clean Architecture
+- Async concurrency using `asyncio.gather`
+- PostgreSQL (Dockerized)
+- Full CRUD operations
+- Aggregated dashboard endpoints
+- Pydantic validation layer
+- Centralized logging system
+- Pagination support
+- Relational database modeling
 
 ---
 
